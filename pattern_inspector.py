@@ -14,9 +14,15 @@ Description: finds the number of counts and their pattern in a single 2d-frame.
 """
 import numpy as np
 
-
-def pattern_inspector(frame, singles, doubles, triples, quads, gt_quads):
-
+def pattern_inspector(frame):
+    
+    # set up event lists
+    singles = []
+    doubles = []
+    triples = []
+    quads = []
+    gt_quads = []
+    
     # location of events in frame
     idx = np.where(frame > 0)
     eventcors = np.array([idx[0],idx[1]]).T # [row,col] format i.e. [y, x]
